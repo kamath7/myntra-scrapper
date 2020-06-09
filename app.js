@@ -15,6 +15,7 @@ app.get('/prices',async (req,res)=>{
     const price1 = await getMeThePrice(`https://www.myntra.com/jeans/pepe-jeans/pepe-jeans-women-black-lara-lola-regular-fit-mid-rise-clean-look-stretchable-jeans/11280352/buy`);
     const price2 = await getMeThePrice(`https://www.myntra.com/jeans/only/only-women-black-skinny-fit-mid-rise-low-distress-stretchable-cropped-jeans/10973332/buy`);
     await res.status(200).send({
+        date: moment().format('Do, MMMM YYYY'),
         loraJeansCost: price1,
         blackSkinnyJeansCost: price2
     });
