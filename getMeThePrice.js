@@ -6,8 +6,9 @@ const getMeThePrice = async (url) => {
     await page.setExtraHTTPHeaders({
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36'
     });
-    await page.waitFor(1000);
+   
     await page.goto(url);
+    await page.waitFor(1000)
     const body = await page.evaluate(() => {
         return document.querySelector('.pdp-price').textContent;
     });
